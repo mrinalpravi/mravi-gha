@@ -33,3 +33,9 @@ jobs:
       - name: Run a multi-line script
         run: |
           aws --version
+
+      - name: Run if PR Opened
+        if: ${{github.event_name == 'pull_request'}}
+        run: 
+          echo PR opened!!
+
